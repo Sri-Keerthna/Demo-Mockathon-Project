@@ -1,0 +1,94 @@
+package com.hcl.trade.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "buy")
+public class Cart {
+
+	@Column
+	private int userId;
+	@Id
+	private int buyId;
+	@Column
+	private String stockName;
+	@Column
+	private int quantityOrder;
+	@Column
+	private double totalPrice;
+	@Column
+	private int stockId;
+
+	public int getUserid() {
+		return userid;
+	}
+
+	public void setUserid(int userid) {
+		this.userid = userid;
+	}
+
+	public int getBuyid() {
+		return buyid;
+	}
+
+	public void setBuyid(int buyid) {
+		this.buyid = buyid;
+	}
+
+	public String getStockname() {
+		return stockname;
+	}
+
+	public void setStockname(String stockname) {
+		this.stockname = stockname;
+	}
+
+	public int getQuantityOrder() {
+		return quantityOrder;
+	}
+
+	public void setQuantityOrder(int quantityOrder) {
+		this.quantityOrder = quantityOrder;
+	}
+
+	public double getTotalprice() {
+		return totalprice;
+	}
+
+	public void setTotalprice(double totalprice) {
+		this.totalprice = totalprice;
+	}
+
+	public int getStockid() {
+		return stockid;
+	}
+
+	public void setStockid(int stockid) {
+		this.stockid = stockid;
+	}
+
+	@Override
+	public String toString() {
+		return "Buy [userid=" + userid + ", buyid=" + buyid + ", stockname=" + stockname + ", quantityOrder="
+				+ quantityOrder + ", totalprice=" + totalprice + ", stockid=" + stockid + "]";
+	}
+
+	public Cart(int userid, int buyid, String stockname, int quantityOrder, double totalprice, int stockid) {
+		super();
+		this.userid = userid;
+		this.buyid = buyid;
+		this.stockname = stockname;
+		this.quantityOrder = quantityOrder;
+		this.totalprice = totalprice;
+		this.stockid = stockid;
+	}
+
+	public Cart() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,11 @@
+package com.hcl.trade.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.hcl.trade.repository.UserRepository;
+
+public class UserService {
+
+	@Autowired
+	UserRepository userRepository;
+}

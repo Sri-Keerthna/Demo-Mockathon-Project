@@ -1,0 +1,25 @@
+1572944245883	Rename package 'com.example.demo'
+1572944317681	Copy compilation units
+1572944334365	Copy compilation unit
+1572944366399	Copy compilation units
+1572944435183	Delete elements
+1572944672522	Rename type 'BuyerRepository'
+1572944689966	Rename type 'Buyer'
+1572962250512	Copy compilation unit
+1572962257263	Delete element
+1572978273708	Rename type 'BuyController'
+1572978304421	Rename type 'BuyRepository'
+1572978331324	Rename type 'BuyService'
+1572978377956	Rename type 'Buy'
+1573107298047	Rename type 'CartService'
+1573107317975	Rename type 'StockService'
+1573107347940	Rename type 'UserService'
+1573111409253	Rename package 'com.hcl.trade.exceptions'
+1573121945957	Delete element
+1573121953179	Delete element
+1573124640166	Rename package 'com.hcl.trade.swagger'
+1573130348373	Delete element
+1573130387732	Delete element
+1573192902603	Delete element
+1573196501499	Delete element
+1573208836396	Rename package 'com.example.demo'

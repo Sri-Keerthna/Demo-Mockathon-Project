@@ -1,0 +1,5 @@
+package com.hcl.trade.model;
+
+public class User {
+
+}

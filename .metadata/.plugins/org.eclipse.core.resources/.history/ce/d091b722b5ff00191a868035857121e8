@@ -1,0 +1,73 @@
+package com.hcl.trade.controller;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.hcl.trade.model.Buy;
+import com.hcl.trade.model.Stock;
+import com.hcl.trade.repository.BuyRepository;
+import com.hcl.trade.repository.StockRepository;
+
+@RestController
+public class StockController {
+
+	@Autowired
+	StockRepository stockRepository;
+
+	@Autowired
+	BuyRepository buyerRepository;
+
+	@RequestMapping("/trade/stocks")
+	public Iterable<Stock> getAllStocks() {
+		return stockRepository.findAll();
+
+	}
+
+	@RequestMapping("/getById/{stockid}")
+	public Optional<Stock> getStockById(@PathVariable int stockid) {
+		return stockRepository.findById(stockid);
+	}
+
+	@RequestMapping("/getByBuyerId/{buy_id}")
+	public Optional<Buy> getStockByBuyerId(@PathVariable int buy_id) {
+		return buyerRepository.findById(buy_id);
+	}
+
+//	 @RequestMapping("/buyStock")
+//	  public String BuyStockById(Stock stock) {
+//		 Optional<Stock> stock1=stockRepository.findById(1);
+//		 String username="Divya";
+//		 double totalprice=5000;
+//		 Buyer buyer=new Buyer();
+//		// Stock stock2=new Stock();
+//		 if(stock1.isPresent()) {
+//			 buyer.setUser_name(username);
+//			 buyer.setStock_name(stock1.get().getName());
+//			 buyer.setQuantity(stock1.get().getQuantity());
+//		//	 stockRepository.save(stock);
+//			 buyer.setBrokerage(stock1.get().getBrokerage());
+//			 buyer.setPrice(stock1.get().getPrice());
+//			 buyer.setTotal_price(totalprice);
+//			 buyerRepository.save(buyer);
+//			 return stock1.get().getName();
+//		 }
+//				return "buy";																
+//		}
+//
+//	
+//	 
+//	 @RequestMapping(value="/saveBuy",method = RequestMethod.POST)    
+//	    public String saveBuy(@ModelAttribute("order") Order order){    
+//		 stockService.save(order);    
+//	        return "redirect:/buyStock";   
+//	    }    
+//	 @RequestMapping("/getStockById")
+//	    public ModelAndView getStockbyID(ModelAndView model, @ModelAttribute User user) {
+//				 model.setViewName("StockById");
+//		 return model;
+//	    }
+}

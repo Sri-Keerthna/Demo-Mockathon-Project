@@ -1,0 +1,97 @@
+package com.hcl.trade.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="buy")
+public class Buy {
+
+	@Column
+	private int userid;
+	@Id
+	private int buyid;
+	@Column
+	private String stockname;
+	@Column
+	private int quantityOrder;
+	@Column
+	private double price;
+	@Column
+	private float brokerage;
+	@Column
+	private double totalprice;
+	
+	
+	public int getUserid() {
+		return userid;
+	}
+	public void setUserid(int userid) {
+		this.userid = userid;
+	}
+	public int getBuyid() {
+		return buyid;
+	}
+	public void setBuyid(int buyid) {
+		this.buyid = buyid;
+	}
+	public String getStockname() {
+		return stockname;
+	}
+	public void setStockname(String stockname) {
+		this.stockname = stockname;
+	}
+	public int getQuantityOrder() {
+		return quantityOrder;
+	}
+	public void setQuantityOrder(int quantityOrder) {
+		this.quantityOrder = quantityOrder;
+	}
+	public double getPrice() {
+		return price;
+	}
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	public float getBrokerage() {
+		return brokerage;
+	}
+	public void setBrokerage(float brokerage) {
+		this.brokerage = brokerage;
+	}
+	public double getTotalprice() {
+		return totalprice;
+	}
+	public void setTotalprice(double totalprice) {
+		this.totalprice = totalprice;
+	}
+	
+	
+	@Override
+	public String toString() {
+		return "Buy [userid=" + userid + ", buyid=" + buyid + ", stockname=" + stockname + ", quantityOrder="
+				+ quantityOrder + ", price=" + price + ", brokerage=" + brokerage + ", totalprice=" + totalprice + "]";
+	}
+	
+	
+	public Buy(int userid, int buyid, String stockname, int quantityOrder, double price, float brokerage,
+			double totalprice) {
+		super();
+		this.userid = userid;
+		this.buyid = buyid;
+		this.stockname = stockname;
+		this.quantityOrder = quantityOrder;
+		this.price = price;
+		this.brokerage = brokerage;
+		this.totalprice = totalprice;
+	}
+	
+	
+	public Buy() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+}

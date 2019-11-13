@@ -1,0 +1,14 @@
+package com.hcl.trade.service;
+
+import java.util.List;
+
+import com.hcl.trade.domain.Order;
+import com.hcl.trade.model.Cart;
+
+public interface CartService {
+
+	List<Cart> displayByUserid(Integer userId);
+
+	String buyStock(Order order);
+
+}

@@ -1,0 +1,58 @@
+package com.hcl.trade.controller;
+
+import java.util.List;
+
+import org.jboss.logging.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.hcl.trade.domain.Order;
+import com.hcl.trade.exception.QuantityNotNullException;
+import com.hcl.trade.exception.StockIdNotFoundException;
+import com.hcl.trade.exception.UserIdNotFoundException;
+import com.hcl.trade.model.Cart;
+import com.hcl.trade.service.CartServiceImpl;
+import com.hcl.trade.service.StockServiceImpl;
+import com.hcl.trade.service.UserServiceImpl;
+
+@RestController
+@RequestMapping("/cart")
+public class CartController {
+
+	private static final Logger logger = Logger.getLogger(CartController.class);
+
+	@Autowired
+	CartServiceImpl cartService;
+
+	@Autowired
+	UserServiceImpl UserService;
+
+	@Autowired
+	StockServiceImpl stockService;
+
+	@RequestMapping(value = "/users/{userId}", method = RequestMethod.GET)
+	public ResponseEntity<List<Cart>> displayStock(@PathVariable("userId") Integer userId)
+			throws UserIdNotFoundException {
+		List<Cart> cart = cartService.displayByUserid(userId);
+		if (userId == null) {
+			// logger.info("no user found");
+			return new ResponseEntity<List<Cart>>(cart, HttpStatus.NOT_FOUND);
+		}
+		logger.info("Displaying the stocks bought by this user ");
+		return new ResponseEntity<List<Cart>>(cart, HttpStatus.OK);
+	}
+
+	@RequestMapping("/stockstoCart")
+	public ResponseEntity<String> buyStock(@RequestBody Order order)
+			throws StockIdNotFoundException, QuantityNotNullException {
+		logger.info("Successfully Ordered");
+		return new ResponseEntity<String>(cartService.buyStock(order), new HttpHeaders(), HttpStatus.OK);
+	}
+}

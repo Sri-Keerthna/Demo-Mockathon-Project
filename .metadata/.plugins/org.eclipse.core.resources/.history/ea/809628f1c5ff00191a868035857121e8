@@ -1,0 +1,31 @@
+package com.hcl.trade.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.hcl.trade.model.Buy;
+import com.hcl.trade.repository.BuyRepository;
+import com.hcl.trade.repository.StockRepository;
+
+@Service
+public class BuyService {
+
+	@Autowired
+	BuyRepository buyRepository;
+	
+	@Autowired
+	StockRepository stockRepository;
+	
+	public List<Buy> displayByUserid(int userid){
+		return buyRepository.findByUserid(userid);
+		
+	}
+	
+	public List<Buy> calOrders(Buy buy){
+		
+		return null;
+		
+	}
+}

@@ -1,0 +1,62 @@
+package com.hcl.trade.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.hcl.trade.model.Buy;
+import com.hcl.trade.model.Order;
+import com.hcl.trade.model.Stock;
+import com.hcl.trade.repository.BuyRepository;
+import com.hcl.trade.repository.StockRepository;
+
+@Service
+public class BuyService {
+
+	@Autowired
+	BuyRepository buyRepository;
+	
+	@Autowired
+	StockRepository stockRepository;
+	
+	@Autowired
+	StockService stockService;
+	
+	
+	public List<Buy> displayByUserid(int userid){
+		return buyRepository.findByUserid(userid);
+		
+	}
+	
+	public String buyStock(Order order) {
+		String res="";
+		Stock stock=stockService.getStockByStockId(order.getStockid());
+		Buy buys=new Buy();
+		Integer quantityAvailable=stock.setQuantity();
+		Integer quantity=0;
+		Integer quantityOrder=order.getQuantity();
+		
+		if(quantityAvailable>=quantityOrder) {
+			quantity=quantityAvailable-quantityOrder;
+			stock.setQuantity(quantity);
+			Double totalAmount=0.0;
+			Double unitPrice=stock.getPrice();
+			Float brokeragePrice=stock.getBrokerage();
+			totalAmount=(unitPrice*quantityOrder)+((unitPrice*quantityOrder)/100);
+			buys.setTotalprice(totalprice);
+			buys.setStockid(order.getStockid());
+			buys.setStockname(stock.getStockname());
+			buys.setUserid(order.getUserid());
+			buys.setQuantityOrder(order.getQuantity());
+			buyRepository.save(buys);
+			stockService.
+			res="Order Applied";
+		}
+		else {
+			res="Quantity not available";
+		}
+	
+	}
+	
+}

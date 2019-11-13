@@ -1,0 +1,32 @@
+package com.hcl.trade.controller;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.hcl.trade.domain.Order;
+import com.hcl.trade.model.Cart;
+import com.hcl.trade.model.Stock;
+
+@RestController
+public class TradeControllerSwagger {
+
+	@GetMapping("/users/{userId}")
+	public List<Cart> displayByUserid(@PathVariable Integer userId){
+		
+	}
+
+	@PostMapping("/stockstoCart")
+	public String buyStock(Order order) {
+		
+	}
+	
+	@GetMapping("/allStocks/")
+	public List<Stock> displayStocks(){
+	
+}
+	
+}

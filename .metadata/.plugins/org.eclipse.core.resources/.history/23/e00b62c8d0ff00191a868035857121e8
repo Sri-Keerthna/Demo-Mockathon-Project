@@ -1,0 +1,66 @@
+package com.hcl.trade.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.hcl.trade.model.Buy;
+import com.hcl.trade.model.Stock;
+import com.hcl.trade.service.BuyService;
+import com.hcl.trade.service.StockService;
+import com.hcl.trade.service.UserService;
+
+@RestController
+@RequestMapping("/trade")
+public class BuyController {
+
+	@Autowired
+	BuyService buyService;
+	
+	@Autowired
+	UserService UserService;
+	
+	@Autowired
+	StockService stockService;
+	
+	@RequestMapping(value = "/Users/{userid}/", method = RequestMethod.GET)
+    public ResponseEntity<List<Buy>> getProduct(@PathVariable("userid") Integer userid) {
+		List<Buy> buy = buyService.displayByUserid(userid);
+        if (buy.isEmpty()) {
+            return new ResponseEntity<List<Buy>>(buy, HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<List<Buy>>(buy, HttpStatus.OK);
+    }
+	
+	public String buyStock(Buy buy) {
+		String res="";
+		Stock stock=stockService.getStockByStockId(buy.getStockid());
+		Buy buys=new Buy();
+		Integer quantityAvailable=stock.setQuantity();
+		Integer quantity=0;
+		Integer quantityOrder=buy.getQuantityOrder();
+		
+		if(quantityAvailable>=quantityOrder) {
+			quantity=quantityAvailable-quantityOrder;
+			stock.setQuantity(quantity);
+			Double totalAmount=0.0;
+			Double unitPrice=stock.getPrice();
+			Integer brokeragePrice=stock.getBrokerage();
+			totalAmount=(unitPrice*quantityOrder)+((unitPrice*quantityOrder)/100);
+			buys.setTotalprice(totalprice);
+			buys.setStockid(buy.getStockid());
+			buys.setStockname(stock.getStockname());
+			buys.setUserid(buy.getUserid());
+			buys.setQuantityOrder(buy.getQuantityOrder());
+			buy
+			
+		}
+		
+	}
+}

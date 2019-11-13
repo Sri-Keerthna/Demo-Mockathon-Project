@@ -1,0 +1,5 @@
+package com.hcl.trade.swagger;
+
+public class SwaggerConfiguration {
+
+}

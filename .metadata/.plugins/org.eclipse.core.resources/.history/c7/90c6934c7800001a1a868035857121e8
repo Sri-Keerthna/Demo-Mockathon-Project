@@ -1,0 +1,40 @@
+package com.hcl.trade.domain;
+
+public class Order {
+
+	private Integer userid;
+
+	private Integer stockid;
+
+	private Integer quantity;
+
+	public Integer getUserid() {
+		return userid;
+	}
+
+	public void setUserid(Integer userid) {
+		this.userid = userid;
+	}
+
+	public Integer getStockid() {
+		return stockid;
+	}
+
+	public void setStockid(Integer stockid) {
+		this.stockid = stockid;
+	}
+
+	public Integer getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(Integer quantity) {
+		this.quantity = quantity;
+	}
+
+	public Order() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+}

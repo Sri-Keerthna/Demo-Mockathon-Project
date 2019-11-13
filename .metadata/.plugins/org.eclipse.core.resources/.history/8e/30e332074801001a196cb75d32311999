@@ -1,0 +1,30 @@
+package com.hcl.trade.controller;
+
+import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.hcl.trade.domain.Order;
+import com.hcl.trade.model.Cart;
+import com.hcl.trade.model.Stock;
+
+@RestController
+public class CartControllerSwagger {
+
+	ConcurrentMap<String, Stock> stocks= new ConcurrentHashMap<>();
+	@GetMapping("/users/{userId}")
+	public List<Cart> displayByUserid(@PathVariable Integer userId){
+		return new ;
+	}
+
+	@PostMapping("/stockstoCart")
+	public Stock buyStock(@RequestBody Order order) {
+		return 
+	}
+}

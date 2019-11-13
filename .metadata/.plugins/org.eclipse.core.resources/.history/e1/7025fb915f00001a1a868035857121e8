@@ -1,0 +1,5 @@
+package com.hcl.trade.exceptions;
+
+public class QuantityNotNullException {
+
+}

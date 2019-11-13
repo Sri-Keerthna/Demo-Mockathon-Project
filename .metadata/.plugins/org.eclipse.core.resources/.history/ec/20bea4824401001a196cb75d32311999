@@ -1,0 +1,23 @@
+package com.hcl.trade.controller;
+
+import java.util.List;
+
+import com.hcl.trade.domain.Order;
+import com.hcl.trade.model.Cart;
+import com.hcl.trade.model.Stock;
+
+public class TradeControllerSwagger {
+
+	public List<Cart> displayByUserid(Integer userId){
+		
+	}
+
+	public String buyStock(Order order) {
+		
+	}
+	
+	public List<Stock> displayStocks(){
+	
+}
+	
+}

@@ -1,0 +1,19 @@
+package com.hcl.trade.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.hcl.trade.model.Stock;
+import com.hcl.trade.repository.StockRepository;
+
+public class StockService {
+
+	@Autowired
+	StockRepository stockRepository;
+	
+	@RequestMapping("/trade/stocks")
+	public Iterable<Stock> displayStocks() {
+		return stockRepository.findAll();
+
+	}
+}

@@ -1,0 +1,23 @@
+package com.hcl.trade.controller;
+
+import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.hcl.trade.model.Stock;
+
+@RestController
+public class TradeControllerSwagger {
+
+	ConcurrentMap<String, Stock> stocks = new ConcurrentHashMap<>();
+
+	@GetMapping("/allStocks/")
+	public List<Stock> displayStocks() {
+		return (List<Stock>) stocks.values();
+
+	}
+
+}

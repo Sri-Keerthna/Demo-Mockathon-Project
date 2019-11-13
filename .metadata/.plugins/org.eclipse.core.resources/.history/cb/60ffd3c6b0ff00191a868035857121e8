@@ -1,0 +1,7 @@
+package com.hcl.trade.service;
+
+import com.hcl.trade.repository.UserRepository;
+
+public class UserService {
+
+}

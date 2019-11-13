@@ -1,0 +1,30 @@
+package com.hcl.trade.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.hcl.trade.model.Buy;
+import com.hcl.trade.service.BuyService;
+
+@RestController
+public class BuyController {
+
+	@Autowired
+	BuyService buyService;
+	
+	@RequestMapping(value = "/trade/Users/{userid}", method = RequestMethod.GET)
+    public ResponseEntity<List<Buy>> getProduct(@PathVariable("id") Integer userid) {
+		List<Buy> buy = buyService.displayByUserid(userid);
+        if (buy.isEmpty()) {
+            return new ResponseEntity<List<Buy>>(buy, HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<List<Buy>>(buy, HttpStatus.OK);
+    }
+}

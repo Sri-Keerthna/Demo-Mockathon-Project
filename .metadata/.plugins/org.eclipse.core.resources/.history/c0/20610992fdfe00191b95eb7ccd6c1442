@@ -1,0 +1,74 @@
+package com.example.demo;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController 
+public class StockController {
+
+	@Autowired
+	StockRepository stockRepository;
+	
+	@Autowired
+	BuyerRepository buyerRepository;
+	
+	 @RequestMapping("/getAll")
+	    public Iterable<Stock> getAllStocks() {
+		 	 return stockRepository.findAll();		
+		 
+	 }
+	 
+	 @RequestMapping("/getById/{stockid}")
+	    public Optional<Stock> getStockById(@PathVariable int stockid) {
+		return stockRepository.findById(stockid);
+	 }
+	 
+	 @RequestMapping("/getByBuyerId/{user_name}")
+	    public Optional<Buyer> getStockByBuyerId(@PathVariable String user_name) {
+		return buyerRepository.findById(user_name);
+	 }
+	 
+//	 @RequestMapping("/buyStock")
+//	  public String BuyStockById(Stock stock) {
+//	
+//			Stock nStock = new Stock();
+//			int n = 0;
+//			nStock = stockRepository.findById(nStock.getStockid()).get();
+//			if(nStock.getQuantity() != 0) {
+//				
+//				nStock.setQuantity(nStock.getQuantity() - n);
+//				stockRepository.save(nStock);
+//				nStock.getBrokerage();
+//				nStock.getName();
+//				nStock.setPrice(nStock.getPrice());
+//				nStock.setQuantity(n);
+//				nStock.setPrice(nStock.getPrice()+(nStock.getPrice()*nStock.getBrokerage()/100));
+//				
+//				stockRepository.save(nStock);
+//				
+//				return "Added Successfully";
+//				
+//			} else {
+//				
+//				return "Not Added";
+//				
+//			}
+//		}
+//
+//	
+//	 
+//	 @RequestMapping(value="/saveBuy",method = RequestMethod.POST)    
+//	    public String saveBuy(@ModelAttribute("order") Order order){    
+//		 stockService.save(order);    
+//	        return "redirect:/buyStock";   
+//	    }    
+//	 @RequestMapping("/getStockById")
+//	    public ModelAndView getStockbyID(ModelAndView model, @ModelAttribute User user) {
+//				 model.setViewName("StockById");
+//		 return model;
+//	    }
+}

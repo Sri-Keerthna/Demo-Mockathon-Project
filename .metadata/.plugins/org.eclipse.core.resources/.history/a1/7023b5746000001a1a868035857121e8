@@ -1,0 +1,25 @@
+package com.hcl.trade.exceptions;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+
+@ControllerAdvice
+public class CustomExceptionController {
+
+	@ExceptionHandler(value = StockIdNotFoundException.class)
+	public ResponseEntity<Object> StockIdNotFoundException(StockIdNotFoundException exception){
+		return new ResponseEntity<>("StockId Not Found",HttpStatus.NOT_FOUND);
+	}
+	
+	@ExceptionHandler(value = UserIdNotFoundException.class)
+	public ResponseEntity<Object> UserIdNotFoundException(UserIdNotFoundException exception){
+		return new ResponseEntity<>("UserId Not Found",HttpStatus.NOT_FOUND);
+	}
+	
+	@ExceptionHandler(value = QuantityNotNullException.class)
+	public ResponseEntity<Object> QuantityNotNullException(QuantityNotNullException exception){
+		return new ResponseEntity<>("Quantity Can't Be Null",HttpStatus.NOT_FOUND);
+	}
+}

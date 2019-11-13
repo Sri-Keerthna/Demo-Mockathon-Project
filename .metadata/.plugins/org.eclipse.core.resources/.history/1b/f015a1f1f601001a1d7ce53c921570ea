@@ -1,0 +1,10 @@
+package com.hcl.trade.exception;
+
+public class QuantityNotNullException extends Exception {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+}
