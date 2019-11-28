@@ -1,0 +1,16 @@
+to call one API 1 inside another API2
+
+steps:
+1) in web give localhost:urport no/context path/path given in controller
+2) In another API go to controller and type
+
+@Autowired
+RestTemplate RestTemplate;
+
+inside methods type :
+final String uri="http://localhost:8081/student/all"; ---->another API 
+Strng result=restTemplate.getForObject(uri, String.class);
+sysout(result);
+return result;
+
+3) now go to localhost:8080/contextpath/path in API2

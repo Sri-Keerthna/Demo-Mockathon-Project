@@ -1,0 +1,10 @@
+download sonarqube7.7 with 
+
+steps:
+1) go to location : sonarqube7.7->bin->windows->inside tat give cmd
+2) In cmd give sonarStart.bat
+3) inside the project folder open the cmd
+4) u hav to add dependency inside pom and In application file type sonar.host.url=http://localhost:9000 
+5) In this cmd type mvn clean install
+6) mvn sonar:sonar
+7) go to localhost:9000

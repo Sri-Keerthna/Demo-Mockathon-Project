@@ -1,0 +1,19 @@
+swagger :
+
+	used to documenting API
+benefits:
+
+whenver we update our projects it will a utomatically update without manual works 
+
+----------------------------------
+steps to add swagger in ur project
+----------------------------------
+
+-------->getting swagger dependency (both swagger2and swagger-ui)
+----------> enabling swagger in your code (@enableswagger in ur application file)
+------->configure swagger (create a package and create a cls for configuration)
+------->run ur project 
+--------->run in web with this link ( http://localhost:8080/trade/swagger-ui.html)
+-------->adding details as annotation to APIs (we can bring to notes to others abt not to use the names in other places)
+
+

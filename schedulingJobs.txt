@@ -1,0 +1,4 @@
+@EnableScheduling in application main cls
+
+2)  on top of methods to run a particular method
+@scheduled(cron="0 */1 *?**") or @scheduled(fixedRate=6000) 6000-->milliseconds

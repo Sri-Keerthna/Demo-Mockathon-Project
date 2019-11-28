@@ -1,0 +1,7 @@
+S --> Single entity Responsibility (one cls shd hve one controller)
+O --> Open for extension and closed for modification 
+L --> Liskous substitution principle (while extending....child cls shd hav all func of parent cls)
+I --> Interface Seggregation (If there are unimplemented func, create interface seperately and implement it)
+D --> Dependency Inversion (highlevel mpdules shd not depend on lowlevel module for tat use abstraction)
+
+Dont use verbs in class name always noun

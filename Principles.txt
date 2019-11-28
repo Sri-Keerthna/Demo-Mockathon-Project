@@ -1,0 +1,51 @@
+com.hcl.app (company.hcl.application name)
+mention the name of controller,service like which pojo controller,service it is.
+Naming conventions 
+
+Note : go through SOLID Principles
+
+
+
+Cls name,vari name shd be proper given
+
+controller :
+
+context path shd be standard eg : /tradeUserList  
+
+Ap[plication.properties:
+
+context path shd be there
+ddl auto : validate,create,update,none -----------> create will automatically create database no need manual and it will delete each time while running
+-----> update will check database and entity and if any extra column it will automatically create a column
+--------> validate will check db and entity
+ddl
+
+
+dont use primitive datatype
+
+
+validations in controller
+
+----------------NOV 6th---------------
+
+Swagger
+Monkinto
+SonarQube
+Exception handling
+Paging and sorting
+
+Shortcuts :
+CTRL+SHIFT+o --------to remove unused imports
+CTRL+SHIFT+f ------to format code
+CTRL+Shift+s --------to save all files
+Ctrl+f ---------to find and replace
+
+@Transactional is used in updating 2 tables it will update both tables orelse it wont.....if one success and one failure it wont update both
+
+
+run spring boot app in command line
+-------------------------------------
+1) mvn clean install --->go inside the file locating path 
+2) mvn spring-boot:run (or)
+java -jar ./target/{**Executable Jar filename**}.jar
+3) ctrl+c (to stop the running)

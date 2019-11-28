@@ -1,0 +1,26 @@
+TYPES :
+info
+warning
+5)error
+1)trace mode (shows entire project workings like spring logging,spring boot logging)
+2)debug
+
+
+Steps for logger in project:
+
+-------->In Application.properties 
+add logging.level.root=DEBUG 
+add logging.file=Application.log /*any filename */
+/* ths is to enable debug */ 
+
+we can also change log patterns for displaying
+#logging pattern for the console
+logging.pattern.console="%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+
+#logging pattern for file
+logging.pattern.file="%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+
+
+
+
+

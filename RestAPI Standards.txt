@@ -1,0 +1,18 @@
+Any URI shd not end with '/'
+
+@PostMapping("/users")
+@GetMapping("/users")
+@PostMapping("/users/{userId}")
+@GetMapping("/users/{userId}")
+@DeleteMapping("/users/{userId}")
+
+List of orders for a single user
+/users/{userId}/orders
+
+Particular order for a single user
+/users/{userId}/orders/{orderId}
+
+Note :
+u can use - instead of underscore
+dont use capital letters
+java documentation shd be followed
