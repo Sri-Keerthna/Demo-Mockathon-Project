@@ -1,0 +1,25 @@
+registration form 
+when submit in user table
+then generate acc no in acc tab
+
+{
+  "accountNo": 0,
+  "accountType": "Savings",
+  "dob": "1997-03-03",
+  "email": "sri@gmail.com",
+  "gender": "Female",
+  "passWord": "keerthi",
+  "phoneNo": 2345678901,
+  "userName": "Sri"
+}
+
+{
+  "accountNo": 0,
+  "accountType": "Current",
+  "dob": "2000-05-05",
+  "email": "divya@gmail.com",
+  "gender": "Female",
+  "passWord": "divya",
+  "phoneNo": 2564372839,
+  "userName": "Divya"
+}
