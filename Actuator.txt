@@ -1,0 +1,31 @@
+ACTUATOR
+
+steps:
+1) add dependency od actuator in pom file
+2) add properties of actuator in application.properties
+
+#for customise your actuator
+#management.server.port=9002
+management.endpoints.web.exposure.include=* //by default only health and info will work if u give this command it can allow u to see all four like health,info,metrics,beans
+info.app.name=ECommerce Application  //any name can be given based on project
+info.app.description=Online Shoppingappliaction developed  //any description can be given
+#info.app.version=
+
+#management.security.enabled=true
+#management.security.roles=ADMIN
+
+4) now in chrome type these comments and check
+
+FOR INFO :
+http://localhost:7372/eCommerce/actuator/info
+
+FOR HEALTH :
+http://localhost:7372/eCommerce/actuator/health
+
+FOR BEANS :
+http://localhost:7372/eCommerce/actuator/beans
+
+FOR METRICS :
+http://localhost:7372/eCommerce/actuator/metrics
+		  |	---context path
+		  ------ ur server no
